@@ -21,10 +21,6 @@ public class MemberServiceV3_3 {
 
     @Transactional
     public void accountTransfer(String fromId, String toId, int money) throws SQLException {
-        bizLogic(fromId, toId, money);
-    }
-
-    private void bizLogic(String fromId, String toId, int money) throws SQLException {
         Member fromMember = repository.findById(fromId);
         Member toMember = repository.findById(toId);
 
